@@ -1,0 +1,31 @@
+.process-text-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+
+.process-text-container h1{
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
+    text-transform: capitalize;
+}
+
+.process-text-container p{
+    font-size: 1rem;
+    color: var(--bg-color);
+    width: 90%;
+}
+
+@media screen and (max-width: 940px) {
+    .process-text-container{
+        width: 90%;
+        text-align: center;
+    }
+    .process-text-container p{
+        width: 100%;
+    }
+}

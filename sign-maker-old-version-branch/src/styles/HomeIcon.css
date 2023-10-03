@@ -1,0 +1,11 @@
+.go-home-icon{
+    position: fixed;
+    right: 1%;
+    bottom: 2%;
+    z-index: 1;
+    background-color: var(--bg-color);
+    color: var(--white-color);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}

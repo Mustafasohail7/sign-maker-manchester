@@ -1,0 +1,17 @@
+.floating-social-media {
+    position: fixed;
+    top: 50%; /* Vertically center-align the logos */
+    right: 5px; /* Adjust the distance from the right edge of the page */
+    transform: translateY(-50%); /* Vertically center-align the logos */
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: 10px;
+}
+
+.social-media-icon {
+    color: var(--white-color);
+    background-color: var(--bg-color);
+    padding: 7px;
+    border-radius: 50%;
+}

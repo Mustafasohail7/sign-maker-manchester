@@ -1,0 +1,29 @@
+.tagline3-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4%;
+    height: 20vh;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tagline3-container h2{
+    font-size: calc(2rem + 2vw);
+    line-height: 1.2;
+    color: var(--primary-color);
+    text-align: center;
+    max-width: 80%;
+    word-break: break-word;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 8px;
+    text-shadow: 10px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 520px) {
+    .tagline3-container{
+        margin-top: 10%;
+    }
+}

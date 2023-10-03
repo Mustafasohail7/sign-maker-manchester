@@ -1,0 +1,29 @@
+.img-selector{
+    display: flex;
+    gap: 1.25%;
+    justify-content: center;
+    height: 17%;
+}
+
+.img-selector-img{
+    width: 19%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img-selector-img:hover{
+    border: 2px solid var(--primary-color);
+}
+
+.img-selector-img.selected{
+    border: 5px solid var(--primary-color);
+}
+
+@media screen and (max-width: 980px) {
+    .img-selector{
+        height: 9%;
+    }
+    /* .img-selector-img{
+        width: 25%;
+    } */
+}

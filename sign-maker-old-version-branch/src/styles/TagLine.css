@@ -1,0 +1,33 @@
+.tagline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    flex: 1;
+    margin-top: 20px;
+}
+  
+.tagline {
+    font-size: calc(2rem + 1vw);
+    line-height: 1.2;
+    text-align: center;
+    width: 65%;
+    word-break: break-word;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-shadow: 6px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sub-tagline {
+    color: var(--primary-color);
+    word-break: break-word;
+    text-transform: capitalize;
+    line-height: 1.2;
+    font-size: calc(0.8rem + 1vw);
+    font-weight: 600;
+}
+  

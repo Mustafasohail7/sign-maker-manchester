@@ -1,0 +1,36 @@
+.component {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.function-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.component-left{
+  flex: 70%;
+}
+
+.component-right{
+  flex: 30%;
+  overflow-y: auto;
+}
+
+
+@media screen and (max-width: 980px) {
+    .function-container {
+      flex-direction: column;
+    }
+    .component-left {
+      width: 100%;
+    }
+    .component-right{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+}
+  

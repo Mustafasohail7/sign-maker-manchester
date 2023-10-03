@@ -1,0 +1,36 @@
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 96%;
+    margin: 0 auto;
+}
+  
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+}
+
+.portfolio-item img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.portfolio-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+  
+@media screen and (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3,1fr);
+    }
+}
+  
