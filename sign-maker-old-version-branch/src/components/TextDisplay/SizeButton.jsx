@@ -4,6 +4,7 @@ const SizeButton = ({size,setSize,name}) => {
 
     //change size
     const handleSizeButton = (buttonId) => {
+        console.log(buttonId)
         setSize(buttonId);
     }
 

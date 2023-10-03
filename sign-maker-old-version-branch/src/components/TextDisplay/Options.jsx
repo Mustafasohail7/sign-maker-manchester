@@ -14,23 +14,23 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
   const SizeData = [
     {id: 1, name: '50 mm'},
     {id: 2, name: '75 mm'},
-    {id: 3, name: '100 mm'},
-    {id: 4, name: '125 mm'},
-    {id: 5, name: '150 mm'},
-    {id: 6, name: '175 mm'},
-    {id: 7, name: '200 mm'},
+    // {id: 3, name: '100 mm'},
+    // {id: 4, name: '125 mm'},
+    // {id: 5, name: '150 mm'},
+    // {id: 6, name: '175 mm'},
+    // {id: 7, name: '200 mm'},
   ]
 
   const ColorData = [
-    {id: 1, name: 'pink', color: '#c23291'},
+    // {id: 1, name: 'pink', color: '#c23291'},
     {id: 2, name: 'red', color: '#da252a'},
-    {id: 3, name: 'chrome yellow', color: '#d1913a'},
-    {id: 4, name: 'pumpkin orange', color: '#e46c4a'},
-    {id: 5, name: 'light green', color: '#73c259'},
-    {id: 6, name: 'meadow green', color: '#309867'},
-    {id: 7, name: 'aqua', color: '#2da3a7'},
-    {id: 8, name: 'reflex blue', color: '#2d3b7c'},
-    {id: 9, name: 'black', color: '#454648'},
+    // {id: 3, name: 'chrome yellow', color: '#d1913a'},
+    // {id: 4, name: 'pumpkin orange', color: '#e46c4a'},
+    // {id: 5, name: 'light green', color: '#73c259'},
+    // {id: 6, name: 'meadow green', color: '#309867'},
+    // {id: 7, name: 'aqua', color: '#2da3a7'},
+    // {id: 8, name: 'reflex blue', color: '#2d3b7c'},
+    // {id: 9, name: 'black', color: '#454648'},
     {id: 10, name: 'white', color: '#B9B1B1'}
   ]
 
@@ -64,6 +64,7 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
     setPlug2(!plug2)
     if(plug && !plug2) setPlug(false)
   }
+console.log(size)
 
   //resize event listener
   useLayoutEffect(() => {

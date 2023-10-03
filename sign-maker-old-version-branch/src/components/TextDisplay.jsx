@@ -23,6 +23,7 @@ import letters_green from '../data/greenletterData'
 import letters_lblue from '../data/lblueletterData'
 import letters_blue from '../data/blueletterData'
 import letters_black from '../data/blackletterData'
+import letters_manchester from '../data/manchesterLetterData'
 
 const TextDisplay = () => {
 
@@ -30,7 +31,7 @@ const TextDisplay = () => {
 
     const selectedImage = {id: 2, title: "Background 1" ,src: bg}
     const [userText,setUserText] = useState('Drag Me')
-    const [size, setSize] = useState('small');
+    const [size, setSize] = useState('50 mm');
     // const [color,setColor] = useState('red');
     const [signImages,setSignImages] = useState([adapter])
     const [color,setColor] = useState('white');
@@ -49,7 +50,7 @@ const TextDisplay = () => {
       letters = letters_white
       letter_signs.push(adapter)
     }else if(color === 'pink'){
-      letters = letters_pink
+      letters = letters_manchester
     }else if(color === 'red'){
       letters = letters_red
     }else if(color === 'chrome yellow'){

@@ -1,7 +1,9 @@
 // Stylesheet
 import '../../styles/ImageComponent.css';
 
-const ImageComponent = ({selectedImage,signImages,color}) => {
+const ImageComponent = ({selectedImage,signImages,size,color}) => {
+
+  const sizeClass = size === '50 mm' ? 'small' : 'large'
 
   return (
     <div className="image-container" id='image-container'>
@@ -10,23 +12,23 @@ const ImageComponent = ({selectedImage,signImages,color}) => {
       {signImages.map((signImage,index) => {
         if(color === 'white'){
           if(signImage.title === 'adapter'){
-            return <img key={index} src={signImage.src} alt={signImage.title} className='adapter'/>
+            return <img key={index} src={signImage.src} alt={signImage.title} className={`adapter ${sizeClass}`}/>
           }else if(signImage.title === 'space'){
-            return <img key={index} src={signImage.src} alt={signImage.title} className='space'/>
+            return <img key={index} src={signImage.src} alt={signImage.title} className={`space ${sizeClass}`}/>
           }
           return (
             <img key={index} src={signImage.src} alt={signImage.title} 
-                className={`letter ${signImage.title==='I' || signImage.title==='one' ? 'slim' : ''}`}
+                className={`letter ${sizeClass} ${signImage.title==='I' || signImage.title==='one' ? 'slim' : ''}`}
             />)
         }else{
           if(signImage.title === 'adapter'){
-            return <img key={index} src={signImage.src} alt={signImage.title} className='adapter'/>
+            return <img key={index} src={signImage.src} alt={signImage.title} className={`adapter ${sizeClass}`}/>
           }else if(signImage.title === 'space'){
-            return <img key={index} src={signImage.src} alt={signImage.title} className='color-space'/>
+            return <img key={index} src={signImage.src} alt={signImage.title} className={`color-space ${sizeClass}`}/>
           }
           return (
             <img key={index} src={signImage.src} alt={signImage.title} 
-                className={`color-letter ${signImage.title==='I' || signImage.title==='one' ? 'slim' : ''}`}
+                className={`color-letter ${sizeClass} ${signImage.title==='I' || signImage.title==='one' ? 'slim' : ''}`}
             />)
         }
         }
