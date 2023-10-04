@@ -1,7 +1,8 @@
 import { useState, useCallback } from 'react'
 
 //images
-import bg from '../assets/picture.png'
+// import bg from '../assets/picture.png'
+import BG from '../assets/BG.png'
 
 //components
 import TagLine from './TextDisplay/TagLine'
@@ -30,7 +31,7 @@ const TextDisplay = () => {
 
     const adapter = {src:adapterImage, title: 'adapter'}
 
-    const selectedImage = {id: 2, title: "Background 1" ,src: bg}
+    const selectedImage = {id: 2, title: "Background 1" ,src: BG}
     const [userText,setUserText] = useState('Drag Me')
     const [size, setSize] = useState('50 mm');
     // const [color,setColor] = useState('red');
