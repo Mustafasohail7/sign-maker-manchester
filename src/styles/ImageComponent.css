@@ -25,10 +25,11 @@
     align-items: flex-end;
     width: 100%;
     flex-wrap: wrap;
-    margin-left: 50px;
+    margin-left: 22%;
+    margin-bottom: 7%;
 }
 
-.sign-container-color{
+/* .sign-container-color{
     margin-left: 50px;
 }
 
@@ -40,12 +41,13 @@
     align-items: flex-end;
     width: 100%;
     flex-wrap: wrap;
-}
+} */
 
 .letter{
     width: 50px;
     height: 70px;
     margin-bottom: 10px;
+    margin-left: -10px;
     /* mix-blend-mode: lighten; */
 }
 
@@ -53,21 +55,33 @@
     width: 60px;
     height: 80px;
     margin-bottom: 10px;
+    margin-left: -12px;
 }
 
-.color-letter{
-    /* width: 60px; */
+.adapter{
+    width: 60px;
+    height: 50px;
+    margin-bottom: 12px;
+}
+
+.adapter.large{
+    margin-bottom: 14px;
+}
+
+
+/* .color-letter{
+    // width: 60px;
     width: 50px;
     height: 70px;
     margin-bottom: 10px;
 }
 
 .color-letter.large{
-    /* width: 70px; */
+    // width: 70px;
     width: 60px;
     height: 80px;
     margin-bottom: 10px;
-}
+} */
 
 
 .space{
@@ -82,22 +96,15 @@
     margin-bottom: 10px;
 }
 
-.color-space{
+/* .color-space{
     width: 24px;
     height: 70px;
     margin-bottom: 10px;
-}
+} */
 
 .letter.slim{
     width: 30px;
 }
-
-.adapter{
-    width: 60px;
-    height: 31px;
-    margin-bottom: 10px;
-}
-
 
 @media screen and (max-width: 980px) {
     .image-container {
@@ -105,8 +112,7 @@
         height: 90%;
     }
     .sign-container{
-        /* bottom: 3%; */
-        bottom: 7%;
+        bottom: 3%;
     }
 
     .letter{
@@ -118,19 +124,26 @@
     .letter.large{
         width: 65px;
         height: 75px;
+        margin-left: -13px;
     }
-    .color-letter{
+    .adapter{
+        width: 55px;
+        height: 45px;
+    }
+    .adapter.large{
+        width: 65px;
+        height: 55px;
+        margin-bottom: 13px;
+    }
+    /* .color-letter{
         width: 55px;
         height: 65px;
     }
     .color-letter.large{
         width: 65px;
         height: 75px;
-    }
-    .adapter{
-        height: 24px;
-        width: 60px;
-    }
+    } */
+    
     .letter.slim{
         width: 24px;
     }
@@ -138,39 +151,48 @@
         width: 20px;
         height: 25px;
     }
-    .color-space{
+    /* .color-space{
         width: 24px;
         height: 70px;
         margin-bottom: 10px;
-    }
+    } */
 }
 
 @media screen and (max-width: 746px) {
     .sign-container{
-        bottom: 7%;
+        bottom: 2%;
     }
     .letter{
-        height: 42px;
-        width: 30px;
-    }
-    .letter.large{
         height: 52px;
         width: 40px;
+        margin-left: -8px;
     }
-    .color-letter{
-        /* width: 45px;
-        height: 56px; */
+    .letter.large{
+        height: 62px;
+        width: 50px;
+        margin-left: -10px;
+    }
+    .adapter{
+        height: 45px;
+        width: 45px;
+        margin-bottom: 11.5px;
+    }
+    .adapter.large{
+        height: 50px;
+        width: 55px;
+        margin-bottom: 12.5px;
+    }
+    /* .color-letter{
+        //width: 45px;
+        //height: 56px;
         height: 42px;
         width: 30px;
     }
     .color-letter.large{
         height: 52px;
         width: 40px;
-    }
-    .adapter{
-        height: 18px;
-        width: 45px;
-    }
+    } */
+    
     .letter.slim{
         width: 18px;
     }
@@ -178,9 +200,9 @@
         width: 15px;
         height: 18.5px;
     }
-    .color-space{
+    /* .color-space{
         width: 18px;
         height: 56px;
         margin-bottom: 10px;
-    }
+    } */
 }

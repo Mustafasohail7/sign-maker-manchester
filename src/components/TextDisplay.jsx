@@ -12,7 +12,7 @@ import Options from './TextDisplay/Options'
 
 import '../styles/TextDisplay.css'
 
-import adapterImage from '../assets/ZZadapter.png'
+// import adapterImage from '../assets/ZZadapter.png'
 
 // import letters_white from '../data/straightLetterData'
 // import letters_pink from '../data/pinkletterData'
@@ -29,13 +29,11 @@ import letters_manchester_red from '../data/manchesterRedLetterData'
 
 const TextDisplay = () => {
 
-    const adapter = {src:adapterImage, title: 'adapter'}
-
     const selectedImage = {id: 2, title: "Background 1" ,src: BG}
     const [userText,setUserText] = useState('Drag Me')
     const [size, setSize] = useState('50 mm');
     // const [color,setColor] = useState('red');
-    const [signImages,setSignImages] = useState([adapter])
+    const [signImages,setSignImages] = useState([])
     const [color,setColor] = useState('white');
     const [text,setText] = useState('')
 
@@ -50,6 +48,9 @@ const TextDisplay = () => {
     if(color === 'white'){
       // eslint-disable-next-line
       letters = letters_manchester
+      letter_signs.push(letters.find(
+        (letter) => letter.title === 'adapter'
+      ))
       // letter_signs.push(adapter)
     }else if(color === 'pink'){
       letters = letters_manchester
