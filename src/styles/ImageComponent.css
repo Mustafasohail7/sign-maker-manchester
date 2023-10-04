@@ -26,7 +26,7 @@
     width: 100%;
     flex-wrap: wrap;
     margin-left: 22%;
-    margin-bottom: 7%;
+    margin-bottom: 1vw;
 }
 
 /* .sign-container-color{
@@ -44,27 +44,28 @@
 } */
 
 .letter{
-    width: 50px;
-    height: 70px;
+    width: 40px;
+    height: 60px;
     margin-bottom: 10px;
-    margin-left: -10px;
+    margin-left: -8px;
     /* mix-blend-mode: lighten; */
 }
 
 .letter.large{
-    width: 60px;
-    height: 80px;
+    width: 50px;
+    height: 70px;
     margin-bottom: 10px;
-    margin-left: -12px;
+    margin-left: -10px;
 }
 
 .adapter{
-    width: 60px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     margin-bottom: 12px;
 }
 
 .adapter.large{
+    width: 55px;
     margin-bottom: 14px;
 }
 
@@ -106,33 +107,40 @@
     width: 30px;
 }
 
+@media screen and (max-width: 1200px) {
+    .sign-container{
+        margin-bottom: 5%;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .image-container {
         width: 100%;
         height: 90%;
     }
     .sign-container{
-        bottom: 3%;
+        margin-bottom: 2%;
     }
 
     .letter{
         /* width: 40px;
         height: 56px; */
-        width: 55px;
-        height: 65px;
+        width: 45px;
+        height: 55px;
+        margin-left: -10px;
     }
     .letter.large{
-        width: 65px;
-        height: 75px;
-        margin-left: -13px;
+        width: 55px;
+        height: 65px;
+        margin-left: -11px;
     }
     .adapter{
-        width: 55px;
-        height: 45px;
+        width: 50px;
+        height: 40px;
     }
     .adapter.large{
-        width: 65px;
-        height: 55px;
+        width: 60px;
+        height: 50px;
         margin-bottom: 13px;
     }
     /* .color-letter{
@@ -160,26 +168,26 @@
 
 @media screen and (max-width: 746px) {
     .sign-container{
-        bottom: 2%;
+        margin-bottom: 2%;
     }
     .letter{
+        height: 42px;
+        width: 30px;
+        margin-left: -6px;
+    }
+    .letter.large{
         height: 52px;
         width: 40px;
         margin-left: -8px;
     }
-    .letter.large{
-        height: 62px;
-        width: 50px;
-        margin-left: -10px;
-    }
     .adapter{
-        height: 45px;
-        width: 45px;
+        height: 35px;
+        width: 35px;
         margin-bottom: 11.5px;
     }
     .adapter.large{
-        height: 50px;
-        width: 55px;
+        height: 40px;
+        width: 45px;
         margin-bottom: 12.5px;
     }
     /* .color-letter{
