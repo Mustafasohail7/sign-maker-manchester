@@ -57,6 +57,9 @@ const TextDisplay = () => {
     }else if(color === 'red'){
       // letters = letters_red
       letters = letters_manchester_red
+      letter_signs.push(letters.find(
+        (letter) => letter.title === 'adapter'
+      ))
     }else if(color === 'chrome yellow'){
       letters = letters_yellow
     }else if(color === 'pumpkin orange'){

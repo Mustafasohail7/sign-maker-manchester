@@ -7,6 +7,7 @@ import E from '../assets/letters_manchester_red/E.png'
 import S from '../assets/letters_manchester_red/S.png'
 import T from '../assets/letters_manchester_red/T.png'
 import R from '../assets/letters_manchester_red/R.png'
+import blank from '../assets/letters_manchester_red/blank.png'
 
 const images = [
     {id:0, src: M, title: 'M'},
@@ -18,6 +19,7 @@ const images = [
     {id:6, src: S, title: 'S'},
     {id:7, src: T, title: 'T'},
     {id:8, src: R, title: 'R'},
+    {id:9, src: blank, title: 'adapter'},
 ]
 
 export default images
