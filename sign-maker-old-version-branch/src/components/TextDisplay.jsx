@@ -13,9 +13,9 @@ import '../styles/TextDisplay.css'
 
 import adapterImage from '../assets/ZZadapter.png'
 
-import letters_white from '../data/straightLetterData'
-import letters_pink from '../data/pinkletterData'
-import letters_red from '../data/redletterData'
+// import letters_white from '../data/straightLetterData'
+// import letters_pink from '../data/pinkletterData'
+// import letters_red from '../data/redletterData'
 import letters_yellow from '../data/yellowletterData'
 import letters_orange from '../data/orangeletterData'
 import letters_lgreen from '../data/lgreenletterData'
@@ -24,6 +24,7 @@ import letters_lblue from '../data/lblueletterData'
 import letters_blue from '../data/blueletterData'
 import letters_black from '../data/blackletterData'
 import letters_manchester from '../data/manchesterLetterData'
+import letters_manchester_red from '../data/manchesterRedLetterData'
 
 const TextDisplay = () => {
 
@@ -47,12 +48,13 @@ const TextDisplay = () => {
     
     if(color === 'white'){
       // eslint-disable-next-line
-      letters = letters_white
-      letter_signs.push(adapter)
+      letters = letters_manchester
+      // letter_signs.push(adapter)
     }else if(color === 'pink'){
       letters = letters_manchester
     }else if(color === 'red'){
-      letters = letters_red
+      // letters = letters_red
+      letters = letters_manchester_red
     }else if(color === 'chrome yellow'){
       letters = letters_yellow
     }else if(color === 'pumpkin orange'){
@@ -71,11 +73,13 @@ const TextDisplay = () => {
 
     for (const char of newText.toUpperCase()){
       let matchingLetter
+      console.log('here')
       if(char === ' '){
         matchingLetter = letters.find(
           (letter) => letter.title === 'space'
         )
       }else{
+        console.log('finding')
         matchingLetter = letters.find(
           (letter) => letter.title === `${char}`
         )
