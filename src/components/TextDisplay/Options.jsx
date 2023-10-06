@@ -1,5 +1,4 @@
 import { useState, useLayoutEffect } from 'react';
-import { AiOutlineCheck } from 'react-icons/ai';
 
 //stylesheet
 import '../../styles/Options.css';
@@ -8,6 +7,7 @@ import '../../styles/Options.css';
 import SectionContainer from './SectionContainer';
 import SizeButton from './SizeButton';
 import ColorButton from './ColorButton';
+import SliderButton from './SliderButton';
 
 const Options = ({size,setSize,color,setColor,render,text}) => {
 
@@ -34,9 +34,11 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
     {id: 10, name: 'white', color: '#B9B1B1'}
   ]
 
-  const [stand, setStand] = useState(false);
+  const [windowStand, setWindowStand] = useState(false);
+  const [wallStand, setWallStand] = useState(false);
   const [plug, setPlug] = useState(false);
   const [plug2,setPlug2] = useState(false);
+  const [plug3,setPlug3] = useState(false);
   const [wrap,setWrap] = useState(false);
   
   //change section layout
@@ -47,25 +49,6 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
       setWrap(true);
     }
   }
-
-  //toggle stand
-  const handleStandToggle = () => {
-    setStand(!stand);
-  }
-
-  //toggle plug
-  const handlePlugToggle = () => {
-    setPlug(!plug)
-    if(plug2 && !plug) setPlug2(false)
-  }
-  
-  //toggle plug2
-  const handlePlugTwoToggle = () => {
-    setPlug2(!plug2)
-    if(plug && !plug2) setPlug(false)
-  }
-console.log(size)
-
   //resize event listener
   useLayoutEffect(() => {
 
@@ -102,42 +85,25 @@ console.log(size)
         </div>
       </div>
 
-      <div className="section add-to-cart">
+      <div className='section'>
       <div className='checkbox-holder'>
-            <div className='checkbox-item'>
-              <p>Include Stand</p>
-              <label className={`checkbox-toggle ${stand ? 'checked' : ''}`}>
-                <input type="checkbox" checked={stand} onChange={handleStandToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
+            <div className='checkbox-holder-inside'>
+              <p>Include Stands</p>
+              <SliderButton name="Wall Stand" stand={wallStand} setStand={setWallStand}/>
+              <SliderButton name="Window Stand" stand={windowStand} setStand={setWindowStand}/>
             </div>
-            <div className='checkbox-item'>
-              <p>Include Adapter</p>
-              <label className={`checkbox-toggle ${plug ? 'checked' : ''}`}>
-                <input type="checkbox" checked={plug} onChange={handlePlugToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
+      </div>
+      </div>
+
+      <div className="section add-to-cart">
+            <div className='checkbox-holder'>
+            <div className='checkbox-holder-inside'>
+              <p>Include Adapters</p>
+              <SliderButton name="Adapter 1" stand={plug} setStand={setPlug}/>
+              <SliderButton name="Adapter 2" stand={plug2} setStand={setPlug2}/>
+              <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
-            <div className='checkbox-item'>
-              <p>Include Adapter 2</p>
-              <label className={`checkbox-toggle ${plug2 ? 'checked' : ''}`}>
-                <input type="checkbox" checked={plug2} onChange={handlePlugTwoToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
             </div>
-          </div>
           <button className="cart-btn">ADD TO CART</button>
       </div>
 
@@ -166,48 +132,17 @@ console.log(size)
 
       <div className="section">
         <div className="options">
-          {/* <label className="checkbox-container">
-            <input
-              type="checkbox"
-              checked={stand}
-              onChange={() => setStand(!stand)}
-            />
-            <span className="checkmark"></span>
-            <span className="label-text">Include Stand</span>
-          </label> */}
           <div className='checkbox-holder'>
-            <div className='checkbox-item'>
-              <p>Include Stand</p>
-              <label className={`checkbox-toggle ${stand ? 'checked' : ''}`}>
-                <input type="checkbox" checked={stand} onChange={handleStandToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
+            <div className='checkbox-holder-inside'>
+              <p>Include Stands</p>
+              <SliderButton name="Wall Stand" stand={wallStand} setStand={setWallStand}/>
+              <SliderButton name="Window Stand" stand={windowStand} setStand={setWindowStand}/>
             </div>
-            <div className='checkbox-item'>
-              <p>Include Adapter</p>
-              <label className={`checkbox-toggle ${plug ? 'checked' : ''}`}>
-                <input type="checkbox" checked={plug} onChange={handlePlugToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
-            </div>
-            <div className='checkbox-item'>
-              <p>Include Adapter 2</p>
-              <label className={`checkbox-toggle ${plug2 ? 'checked' : ''}`}>
-                <input type="checkbox" checked={plug2} onChange={handlePlugTwoToggle} />
-                <span className="slider">
-                  <span className="slider-icon">
-                    <AiOutlineCheck />
-                  </span>
-                </span>
-              </label>
+            <div className='checkbox-holder-inside'>
+              <p>Include Adapters</p>
+              <SliderButton name="Adapter 1" stand={plug} setStand={setPlug}/>
+              <SliderButton name="Adapter 2" stand={plug2} setStand={setPlug2}/>
+              <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
           </div>
           <button className="cart-btn">ADD TO CART</button>

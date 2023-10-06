@@ -130,65 +130,27 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-}
+}  
 
-.checkbox-item{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.checkbox-holder p{
     font-weight: 500;
     font-size: 1.5em;
     letter-spacing: 2px;
     text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.checkbox-toggle {
-    display: inline-block;
-    position: relative;
-    width: 60px;
-    height: 30px;
-    background-color: #dcdcdc;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--primary-color);
-  }
-  
-  .checkbox-toggle.checked {
-    background-color: var(--primary-color);
-  }
-  
-  .slider {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 26px;
-    height: 26px;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: left 0.3s ease;
-  }
-  
-  .checkbox-toggle.checked .slider {
-    left: 32px;
-  }
-  
-  .slider-icon {
+.checkbox-holder-inside{
+    width: 96%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 16px;
-    color: #fff;
-    height: 100%;
-  }
-  
-  input[type='checkbox'] {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
+    gap: 20px;
+    border: 2px solid var(--primary-color);
+    padding: 10px 0px;
+    border-radius: 10px;
+}
+
 
 @media (max-width: 980px) {
     .content-container {
@@ -207,8 +169,13 @@
         align-items: flex-start;
     }
 
+    .checkbox-holder-inside {
+        border: none;
+    }
+
     .cart-btn {
         width: 100%;
+        margin-top: 20px;
     }
   
     .section-heading {
