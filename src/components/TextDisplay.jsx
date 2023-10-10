@@ -27,7 +27,7 @@ import letters_black from '../data/blackletterData'
 import letters_manchester from '../data/manchesterLetterData'
 import letters_manchester_red from '../data/manchesterRedLetterData'
 
-const TextDisplay = () => {
+const TextDisplay = ({setOrder}) => {
 
     const selectedImage = {id: 2, title: "Background 1" ,src: BG}
     const [userText,setUserText] = useState('Drag Me')
@@ -107,7 +107,7 @@ const TextDisplay = () => {
           <ImageComponent signImages={signImages} userText={userText} selectedImage={selectedImage} size={size} color={color}/>
         </div>
         <div className='component-right' >
-          <Options size={size} setSize={setSize} color={color} setColor={setColor} render={renderSigns} text={text}/>
+          <Options size={size} setSize={setSize} color={color} setColor={setColor} render={renderSigns} text={text} setOrder={setOrder}/>
         </div>
     </div>
     </>

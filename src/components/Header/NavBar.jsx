@@ -10,7 +10,11 @@ import '../../styles/NavBar.css'
 
 import logo from '../../assets/logo.png'
 
-const NavBar = ({setDropDown}) => {
+const NavBar = ({setDropDown,order,setHovered}) => {
+
+    const handleCart = () => {
+        setHovered(true)
+    }
 
     //Close the dropdown menu when the user scrolls
     useEffect(() => { 
@@ -60,9 +64,9 @@ const NavBar = ({setDropDown}) => {
                         ))}
                     </ul>
             </div>       
-            <div className="navbar-cart">
+            <div className="navbar-cart" onClick={handleCart}>
                 <FaShoppingCart />
-                <span className="cart-count">3</span>
+                <span className="cart-count">{order.length}</span>
             </div>
         </div>
       </nav>  

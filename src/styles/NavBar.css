@@ -66,6 +66,11 @@
     position: relative;
 }
 
+.navbar-cart:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
 .cart-count {
     position: absolute;
     top: -8px;
@@ -81,7 +86,7 @@
     font-size: 12px;
     font-weight: bold;
 }
-  
+
 @media screen and (max-width: 768px) {
     .navbar {
         justify-content: space-between;

@@ -9,7 +9,7 @@ import SizeButton from './SizeButton';
 import ColorButton from './ColorButton';
 import SliderButton from './SliderButton';
 
-const Options = ({size,setSize,color,setColor,render,text}) => {
+const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
 
   const SizeData = [
     {id: 1, name: '50 mm'},
@@ -49,6 +49,20 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
       setWrap(true);
     }
   }
+
+  const handleAddOrder = () => {
+    setOrder((prevOrder) => [...prevOrder,{
+      id: Date.now(),
+      size,
+      color,
+      stand1: wallStand,
+      stand2: windowStand,
+      adapter1: plug,
+      adapter2: plug2,
+      adapter3: plug3
+    }])
+  }
+
   //resize event listener
   useLayoutEffect(() => {
 
@@ -104,7 +118,7 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
               <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
             </div>
-          <button className="cart-btn">ADD TO CART</button>
+          <button className="cart-btn" onClick={handleAddOrder}>ADD TO CART</button>
       </div>
 
     </SectionContainer>
@@ -145,7 +159,7 @@ const Options = ({size,setSize,color,setColor,render,text}) => {
               <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
           </div>
-          <button className="cart-btn">ADD TO CART</button>
+          <button className="cart-btn" onClick={handleAddOrder}>ADD TO CART</button>
         </div>
       </div>
 

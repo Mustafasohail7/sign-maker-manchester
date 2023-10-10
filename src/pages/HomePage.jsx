@@ -14,15 +14,19 @@ import FAQ from '../components/FAQ/FAQ'
 import Footer from '../components/Footer/Footer'
 // import ChatHead from '../components/ChatHead' 
 import HomeIcon from '../components/HomeIcon'
+import { useState } from 'react'
 
 const HomePage = () => {
+
+    const [order,setOrder] = useState([])
+
     return (
         <>
         <HomeIcon/>
           <Element name='home'>
-            <Header/>
+            <Header order={order}/>
           </Element>
-          <TextDisplay />
+          <TextDisplay setOrder={setOrder}/>
           <TagLine2/>
           <VideoPlayer/>
           <ProcessModelMain />
