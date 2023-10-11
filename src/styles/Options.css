@@ -69,6 +69,10 @@
     background:  rgb(120, 20, 50);
 }
 
+.cart-btn.green{
+    background: green;
+}
+
 .options {
     display: flex;
     flex-wrap: wrap;

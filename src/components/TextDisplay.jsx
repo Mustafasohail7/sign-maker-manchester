@@ -34,8 +34,9 @@ const TextDisplay = ({setOrder}) => {
     const [size, setSize] = useState('50 mm');
     // const [color,setColor] = useState('red');
     const [signImages,setSignImages] = useState([])
-    const [color,setColor] = useState('white');
+    const [color,setColor] = useState('white')
     const [text,setText] = useState('')
+
 
     var letters
 
@@ -107,7 +108,7 @@ const TextDisplay = ({setOrder}) => {
           <ImageComponent signImages={signImages} userText={userText} selectedImage={selectedImage} size={size} color={color}/>
         </div>
         <div className='component-right' >
-          <Options size={size} setSize={setSize} color={color} setColor={setColor} render={renderSigns} text={text} setOrder={setOrder}/>
+          <Options size={size} setSize={setSize} color={color} setColor={setColor} render={renderSigns} text={text} setText={setText} setOrder={setOrder}/>
         </div>
     </div>
     </>

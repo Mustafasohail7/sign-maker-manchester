@@ -20,11 +20,15 @@ const HomePage = () => {
 
     const [order,setOrder] = useState([])
 
+    const handleItemRemove = (id) => {
+      setOrder(order.filter((item) => item.id !== id))
+    }
+
     return (
         <>
         <HomeIcon/>
           <Element name='home'>
-            <Header order={order}/>
+            <Header order={order} handleItemRemove={handleItemRemove}/>
           </Element>
           <TextDisplay setOrder={setOrder}/>
           <TagLine2/>

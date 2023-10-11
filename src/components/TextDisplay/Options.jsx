@@ -9,7 +9,7 @@ import SizeButton from './SizeButton';
 import ColorButton from './ColorButton';
 import SliderButton from './SliderButton';
 
-const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
+const Options = ({size,setSize,color,setColor,render,text,setText,setOrder}) => {
 
   const SizeData = [
     {id: 1, name: '50 mm'},
@@ -40,6 +40,7 @@ const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
   const [plug2,setPlug2] = useState(false);
   const [plug3,setPlug3] = useState(false);
   const [wrap,setWrap] = useState(false);
+  const [added,setAdded] = useState(false)
   
   //change section layout
   const handleSection = () => {
@@ -51,6 +52,7 @@ const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
   }
 
   const handleAddOrder = () => {
+    setAdded(true)
     setOrder((prevOrder) => [...prevOrder,{
       id: Date.now(),
       size,
@@ -59,8 +61,13 @@ const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
       stand2: windowStand,
       adapter1: plug,
       adapter2: plug2,
-      adapter3: plug3
+      adapter3: plug3,
+      text,
     }])
+    setText('')
+    setTimeout(() => {
+      setAdded(false)
+    },2000)
   }
 
   //resize event listener
@@ -118,7 +125,7 @@ const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
               <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
             </div>
-          <button className="cart-btn" onClick={handleAddOrder}>ADD TO CART</button>
+          <button className={`cart-btn ${added ? 'green' : ''}`} onClick={handleAddOrder}>{added ? 'added to cart!' : 'add to cart'}</button>
       </div>
 
     </SectionContainer>
@@ -159,7 +166,7 @@ const Options = ({size,setSize,color,setColor,render,text,setOrder}) => {
               <SliderButton name="Adapter 3" stand={plug3} setStand={setPlug3}/>
             </div>
           </div>
-          <button className="cart-btn" onClick={handleAddOrder}>ADD TO CART</button>
+          <button className={`cart-btn ${added ? 'green' : ''}`} onClick={handleAddOrder}>{added ? 'added to cart!' : 'add to cart'}</button>
         </div>
       </div>
 

@@ -8,6 +8,7 @@ import SocialLinks from './components/Social_Links/SocialLinks'
 
 import HomePage from './pages/HomePage'
 import ErrorPage from './pages/ErrorPage'
+import OrderFormPage from './pages/OrderFormPage'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     },
     {
       path: '/order-form',
-      element: <h1>hello order karo</h1>
+      element: <OrderFormPage/>
     }
   ])
   
