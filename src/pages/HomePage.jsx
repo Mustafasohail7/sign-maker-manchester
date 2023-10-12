@@ -14,11 +14,9 @@ import FAQ from '../components/FAQ/FAQ'
 import Footer from '../components/Footer/Footer'
 // import ChatHead from '../components/ChatHead' 
 import HomeIcon from '../components/HomeIcon'
-import { useState } from 'react'
+import SocialLinks from '../components/Social_Links/SocialLinks'
 
-const HomePage = () => {
-
-    const [order,setOrder] = useState([])
+const HomePage = ({order,setOrder}) => {
 
     const handleItemRemove = (id) => {
       setOrder(order.filter((item) => item.id !== id))
@@ -27,6 +25,7 @@ const HomePage = () => {
     return (
         <>
         <HomeIcon/>
+        <SocialLinks/>
           <Element name='home'>
             <Header order={order} handleItemRemove={handleItemRemove}/>
           </Element>

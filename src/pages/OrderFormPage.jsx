@@ -1,8 +1,12 @@
-const OrderFormPage = () => {
+import HeaderOrderForm from "../components/HeaderOrderForm"
+import CartList from "../components/CartList"
+
+const OrderFormPage = ({order}) => {
   return (
-    <div>
-      Hi Order From Here
-    </div>
+    <>
+      <HeaderOrderForm order={order}/>
+      <CartList order={order}/>
+    </>
   )
 }
 

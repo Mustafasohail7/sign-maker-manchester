@@ -4,23 +4,25 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 //stylesheet
 import './styles/App.css'
 
-import SocialLinks from './components/Social_Links/SocialLinks'
-
 import HomePage from './pages/HomePage'
 import ErrorPage from './pages/ErrorPage'
 import OrderFormPage from './pages/OrderFormPage'
 
+import { useState } from 'react'
+
 function App() {
+
+  const [order,setOrder] = useState([])
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage />,
+      element: <HomePage order={order} setOrder={setOrder} />,
       errorElement: <ErrorPage/>
     },
     {
       path: '/order-form',
-      element: <OrderFormPage/>
+      element: <OrderFormPage  order={order}/>
     }
   ])
   
@@ -34,8 +36,7 @@ function App() {
         }
       },
     })}>
-      {/* <ChatHead/> */}
-      <SocialLinks/> 
+      {/* <ChatHead/> */} 
       <RouterProvider router={router}/> 
     </ChakraProvider>
   );

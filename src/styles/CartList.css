@@ -1,0 +1,16 @@
+.order-function-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    background-color: green;
+}
+
+
+.order-page-left{
+  flex: 70%;
+}
+
+.order-page-right{
+  flex: 30%;
+  overflow-y: auto;
+}
