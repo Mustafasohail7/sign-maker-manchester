@@ -1,9 +1,11 @@
 import '../../styles/CartOverlay.css'
 
 import {RxCross2} from 'react-icons/rx'
-import { BsFillTrashFill } from 'react-icons/bs'
-
 import { Link } from 'react-router-dom'
+
+import { useEffect, useState } from 'react'
+
+import CartOverlayItem from './CartOverlayItem'
 
 const CartOverlay = ({hovered,setHovered,order,handleItemRemove}) => {
 
@@ -26,49 +28,47 @@ const CartOverlay = ({hovered,setHovered,order,handleItemRemove}) => {
     document.body.style.overflow = 'unset'
   }
 
+  const [change,setChange] = useState(false)
+
+  useEffect(() => {
+    if(hovered){
+      setTimeout(() => {
+        setChange(true)
+      }, 250)
+    }else{
+      setChange(false)
+    }
+  }, [hovered])
+
   return (
-    <div className={`cart-overlay ${hovered? 'open' : ''}`}>
-      <div className='cart-overlay-items'>
-      <div className='heading-container-cart'>
-        <h2 className='cart-heading'>Cart</h2>
-        <button onClick={()=>setHovered(false)} className='cross-button-cart'><RxCross2/></button>
+    <>
+      <div className={`dark-layer ${change ? 'open' : ''}`}>
       </div>
-      <div className='cart-items-holder'>
-        {order.map((item,index) => 
-          <div className='cart-item-holder'>
-            <div className='cart-item-heading-holder'>
-              <p>{item.text} Letter Sign</p>
-              <p>Includes:</p>
-              {item.stand1 && <p>Wall Stand</p>}
-              {item.stand2 && <p>Window Stand</p>}
-              {item.adapter1 && <p>Adapter 1</p>}
-              {item.adapter2 && <p>Adapter 2</p>}
-              {item.adapter3 && <p>Adapter 3</p>}
-              <div className='cart-item-color-holder'>
-                <p className='cart-item-color' style={{backgroundColor: colors[item.color]}}>{item.color.charAt(0)}</p>
-                <p className='cart-item-size'>{item.size}</p>
-              </div>
-            </div>
-            <div className='delete-holder'>
-              <BsFillTrashFill className='trashcan' onClick={() => handleItemRemove(item.id)}/>
-              <p>600 pkr</p>
-            </div>
-          </div>
-        )}
-      </div>
-      </div>
-      <div className='cart-item-price-holder'>
-        <div className='price-div'>
-          <p>Total</p>
-          <p>Rs. 600</p>
+      <div className={`cart-overlay ${hovered ? 'open' : ''}`}>
+        <div className='cart-overlay-items'>
+        <div className='heading-container-cart'>
+          <h2 className='cart-heading'>Cart</h2>
+          <button onClick={()=>setHovered(false)} className='cross-button-cart'><RxCross2/></button>
         </div>
-        <Link to='/order-form' className='checkout-btn'>
-          <button >
-            Checkout
-          </button>
-        </Link>
+        <div className='cart-items-holder'>
+          {order.map((item,index) => 
+            <CartOverlayItem item={item} colors={colors} handleItemRemove={handleItemRemove} key={index}/>
+          )}
+        </div>
+        </div>
+        <div className='cart-item-price-holder'>
+          <div className='price-div'>
+            <p className='total'>Total</p> 
+            <p>600 pkr</p>
+          </div>
+          <Link to='/order-form' className='checkout-btn'>
+            <button >
+              Checkout
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
