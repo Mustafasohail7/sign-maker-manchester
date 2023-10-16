@@ -14,15 +14,21 @@ function App() {
 
   const [order,setOrder] = useState([])
 
+  const handleItemRemove = (id) => {
+    // console.log('called')
+    setOrder(order.filter((item) => item.id !== id))
+    // console.log(order)
+  }
+
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage order={order} setOrder={setOrder} />,
+      element: <HomePage order={order} setOrder={setOrder} handleItemRemove={handleItemRemove}/>,
       errorElement: <ErrorPage/>
     },
     {
       path: '/order-form',
-      element: <OrderFormPage  order={order}/>
+      element: <OrderFormPage  order={order} handleItemRemove={handleItemRemove}/>
     }
   ])
   

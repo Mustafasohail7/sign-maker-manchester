@@ -16,11 +16,7 @@ import Footer from '../components/Footer/Footer'
 import HomeIcon from '../components/HomeIcon'
 import SocialLinks from '../components/Social_Links/SocialLinks'
 
-const HomePage = ({order,setOrder}) => {
-
-    const handleItemRemove = (id) => {
-      setOrder(order.filter((item) => item.id !== id))
-    }
+const HomePage = ({order,setOrder,handleItemRemove}) => {
 
     return (
         <>

@@ -1,4 +1,4 @@
-// import '../../styles/OrderForm.css'
+import '../../styles/OrderForm.css'
 
 import { useState } from 'react'
 
@@ -57,27 +57,29 @@ const OrderForm = () => {
   };
 
   return (
-    <div>
+    <div className='order-form-container'>
       <h2>Order Form</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='order-form-form'>
+        <label>Contact Information</label>
+        <div className='contact-info'>
         <div>
-          <label>Name:</label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder='Name'
           />
           {formErrors.name && <p className="error">{formErrors.name}</p>}
         </div>
 
         <div>
-          <label>Phone Number:</label>
           <input
             type="text"
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
+            placeholder='Phone Number'
           />
           {formErrors.phoneNumber && (
             <p className="error">{formErrors.phoneNumber}</p>
@@ -85,14 +87,15 @@ const OrderForm = () => {
         </div>
 
         <div>
-          <label>Email:</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder='Email'
           />
           {formErrors.email && <p className="error">{formErrors.email}</p>}
+        </div>
         </div>
 
         <div>
@@ -102,6 +105,7 @@ const OrderForm = () => {
             name="deliveryAddress"
             value={formData.deliveryAddress}
             onChange={handleChange}
+            placeholder='Delivery Address'
           />
         </div>
 
@@ -111,10 +115,11 @@ const OrderForm = () => {
             name="specialInstructions"
             value={formData.specialInstructions}
             onChange={handleChange}
+            placeholder='Special Instructions'
           />
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" className='order-submit'>Submit</button>
       </form>
     </div>
   );

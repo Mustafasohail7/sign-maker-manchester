@@ -12,8 +12,8 @@ import SliderButton from './SliderButton';
 const Options = ({size,setSize,color,setColor,render,text,setText,setOrder}) => {
 
   const SizeData = [
-    {id: 1, name: '50 mm'},
-    {id: 2, name: '75 mm'},
+    {id: 1, name: '50mm'},
+    {id: 2, name: '75mm'},
     // {id: 3, name: '100 mm'},
     // {id: 4, name: '125 mm'},
     // {id: 5, name: '150 mm'},
