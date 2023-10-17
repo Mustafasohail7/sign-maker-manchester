@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-start;
     width: 100%;
+    overflow: auto;
 }
 
 
@@ -12,4 +13,17 @@
 .order-page-right{
   flex: 30%;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 746px){
+  .order-function-container{
+    flex-direction: column;
+  }
+  .order-page-left{
+    flex: 100%;
+    width: 100%;
+  }
+  .order-page-right{
+    flex: 100%;
+  }
 }
